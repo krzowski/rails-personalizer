@@ -13,3 +13,191 @@
  *= require_tree .
  *= require_self
  */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.bg1 {
+  z-index: -11;  
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #a86ae7;
+}
+
+.bg2 {
+  z-index: -10;
+  position: fixed;
+  width: 200vw;
+  height: 200vh;
+  top: -50vh;
+  left: 10vw;
+}
+
+.app-container {
+  z-index: 1;
+  position: absolute;
+  width: 690px;
+  height: 320px;
+  margin: calc((100vh - 320px) / 2) auto 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.side_panel {
+  width: 90px;
+  height: 320px;
+  background-color: #4d286b;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 600px;
+  z-index: 100;
+  transition: 1s linear;
+}
+#rolled {
+  right: 0;
+}
+.side-panel-fill {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 600px;
+  right: 90px;
+  background-color: #2f164f;
+}
+
+.panel-options {
+  margin-top: 20px;
+}
+.panel-option {
+  list-style: none;
+  display: block;
+  width: 90px;
+  height: 70px;
+}
+.panel-option-link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.panel-option svg {
+  display: block;
+  position: relative;
+  top: calc((70px - 22px) / 2);
+  margin: 0 auto;
+  width: 22px;
+  height: 22px;
+  transition: 0.1s linear;
+  fill: #856999;
+}
+.panel-option:hover svg {
+  fill: #1acb70;
+  transition: 0.1s linear;
+  transform: rotate(45deg);
+}
+
+.main-panel {
+  background-color: #2f164f;
+  width: 600px;
+  height: 320px;  
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+
+.calories-main {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.calories-main > div {
+  float: left;
+}
+
+
+.calories-eaten,
+.calories-burned {
+  display: block;
+  position: relative;
+  width: 190px;
+  height: 100%;
+  letter-spacing: 1px;
+}
+.calories-data-title {
+  color: #FFF;
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 90px;
+  font-size: 13px;
+}
+.calories-data-info {
+  display: block;
+  width: 100%;
+  position: relative;
+  top: 200px;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+}
+.calories-data-info span {
+}
+.calories-data-info p { 
+  color: #FFF; 
+}
+#calories-eaten  { color: #1aad5f; }
+#calories-burned { color: #ff5833; }
+.calories-canvas-container {
+  display: block;
+  position: relative;
+  width: 58px;
+  margin: 90px auto 0;
+  padding-left: 7px; 
+}
+#calories_eaten_canvas,
+#calories_burned_canvas {
+  transform: rotate(45deg);
+}
+
+.calories-left {
+  display: block;
+  position: relative;
+  width: 220px;
+  height: 100%;
+  margin-top: 50px;
+}
+.calories-left-counter {
+  display: block;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+  top: 75px;
+}
+.calories-left-counter #calories-left-value {
+  font-size: 38px;
+  color: #FFF;
+  line-height: 40px;
+}
+.calories-left-counter p {
+  line-height: 30px;
+  color: #6f5c89;
+}
+#calories_left_canvas {
+  transform: rotate(deg);
+}
+#calories-value-hidden,
+#calories-goal-hidden {
+  display: none;
+}

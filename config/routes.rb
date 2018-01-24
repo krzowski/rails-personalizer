@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'app_pages/home'
+  get 'app_pages/home', as: 'home'
   get 'app_pages/user'
   get 'app_pages/checklist'
   get 'app_pages/search'

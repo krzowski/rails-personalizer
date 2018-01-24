@@ -22,11 +22,11 @@
 
 
 <div class="app-container">
-  <div class="side_panel">
+  <div class="side_panel" <%= 'id=rolled' if current_page?(root_path) %>>
     <div class="side-panel-fill"></div>
     <ul class="panel-options">
       <li class="panel-option">
-        <a href="#" class="panel-option-link">
+        <%= link_to destroy_user_session_path, { method: :delete, class: "panel-option-link" } do %>
           <svg class="icon1" viewBox="0 0 35 35">
             <g>
               <rect width="13" height="13" rx="1" ry="1" x="1"  y="1"/>
@@ -35,13 +35,13 @@
               <rect width="13" height="13" rx="1" ry="1" x="20" y="20" />
             </g>
           </svg>
-        </a>
+        <% end %>
       </li>
       
       <% if current_user %>
 
       <li class="panel-option">
-        <%= link_to root_path, { :class => "panel-option-link" } %>
+        <a href="#" class="panel-option-link">
           <svg class="icon2" viewBox="0 0 482.9 482.9">
             <g>
               <g>
@@ -62,7 +62,7 @@
               </g>                                                   
             </g>
           </svg>
-        <% end %>
+        </a>
       </li>
       <li class="panel-option">
         <a href="#" class="panel-option-link">

@@ -41,7 +41,7 @@
       <% if current_user %>
 
       <li class="panel-option">
-        <a href="#" class="panel-option-link">
+        <%= link_to root_path, { :class => "panel-option-link" } %>
           <svg class="icon2" viewBox="0 0 482.9 482.9">
             <g>
               <g>
@@ -62,7 +62,7 @@
               </g>                                                   
             </g>
           </svg>
-        </a>
+        <% end %>
       </li>
       <li class="panel-option">
         <a href="#" class="panel-option-link">

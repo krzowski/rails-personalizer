@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'app_pages/home'
+
+  get 'app_pages/user'
+
+  get 'app_pages/checklist'
+
+  get 'app_pages/search'
+
   devise_for :users
 
   devise_scope :user do

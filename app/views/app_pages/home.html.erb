@@ -1,2 +1,42 @@
-<h1>AppPages#home</h1>
-<p>Find me in app/views/app_pages/home.html.erb</p>
+<div class="calories-main">
+  <span id="calories-value-hidden">2000</span>
+  <span id="calories-goal-hidden">400</span>
+
+  <div class="calories-eaten">
+    <span class="calories-data-title">EATEN</span>
+    <div class="calories-data-info">
+      <span id="calories-eaten">800</span>
+      <p>KCAL</p>
+    </div>
+    <div class="calories-canvas-container">
+      <canvas id="calories_eaten_canvas" width="44" height=44>
+        Sorry, your browser does not support canvas.
+      </canvas>
+    </div>
+  </div>
+
+
+  <div class="calories-left">
+    <div class="calories-left-counter">
+      <span id="calories-left-value">1220</span>
+      <p>LEFT</p>
+    </div>
+    <canvas id="calories_left_canvas" width="220" height=220>
+      Sorry, your browser does not support canvas.
+    </canvas>
+  </div>
+
+
+  <div class="calories-burned">
+    <span class="calories-data-title">BURNED</span>
+    <div class="calories-data-info">
+      <span id="calories-burned">100</span>
+      <p>KCAL</p>
+    </div>
+    <div class="calories-canvas-container">
+      <canvas id="calories_burned_canvas" width="44" height=44>
+        Sorry, your browser does not support canvas.
+      </canvas>
+    </div>
+  </div>
+</div>

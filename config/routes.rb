@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
-  get 'app_pages/home'
 
-  get 'app_pages/user'
-
-  get 'app_pages/checklist'
-
-  get 'app_pages/search'
+  root 'app_pages/home'
 
   devise_for :users
 
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
+  get 'app_pages/home'
+  get 'app_pages/user'
+  get 'app_pages/checklist'
+  get 'app_pages/search'
+
+
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

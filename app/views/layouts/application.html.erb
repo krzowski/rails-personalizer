@@ -2,16 +2,24 @@
 <html>
 <head>
   <title>Personalizer</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   
-<%= simple_format("<p class=flash-notice>#{notice} </p>") if notice %>
-<%= simple_format("<p class=flash-alert>#{alert} </p>") if alert %>
+<% if notice && !notice.blank? %>
+  <div id='flash_message' class='flash-notice'><%= notice %>
+    <div class="close-notice" id='close_flash_message'>X</div>
+  </div>
+<% end %>
 
-
+<% if alert && !alert.blank? %>
+  <div id='flash_message' class='flash-alert'><%= alert %>
+    <div class="close-notice" id='close_flash_message'>X</div>
+  </div>
+<% end %>
 
 
 <div class="bg1"></div>

@@ -18,16 +18,20 @@
 
 /* CANVAS DRAWINGS */
 
-document.addEventListener('DOMContentLoaded', function(){
-  drawCaloriesLeftCanvas();
-  drawCaloriesLeftProgress();
-  drawCaloriesEatenCanvas();
-  drawCaloriesBurnedCanvas();
+$(document).ready(function(){
+  
+  if ( $('#calories_left_canvas').length ) { drawCaloriesLeftCanvas(); }
+  if ( $('#calories_burned_canvas').length ) { drawCaloriesBurnedCanvas(); }
+  if ( $('#calories_eaten_canvas').length ) { drawCaloriesEatenCanvas(); }
 
-  if ( document.getElementById('rolled') ) {
-    document.getElementById('rolled').style.right = '600px';
-  }
+  if ( $('#rolled').length ) { document.getElementById('rolled').style.right = '600px'; }
+  
+  $('#close_flash_message').on("click", function() {
+    $('#flash_message').css({ 'display': 'none' });
+  });
 });
+
+
 
 function drawCaloriesEatenCanvas(){
   var canvas = document.getElementById("calories_eaten_canvas");
@@ -81,6 +85,8 @@ function drawCaloriesLeftCanvas(){
   ctx.strokeStyle = '#5b4573';
   ctx.lineCap = 'round';
   ctx.stroke();
+
+  drawCaloriesLeftProgress();
 }
 
 function drawCaloriesLeftProgress(){

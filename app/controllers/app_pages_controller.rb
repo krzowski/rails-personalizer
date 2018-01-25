@@ -1,8 +1,11 @@
 class AppPagesController < ApplicationController
-  def home
-  end
+  before_action :authenticate_user!, except: :home
 
-  def user
+  def home
+    unless current_user
+      flash[:notice] = notice if notice
+      redirect_to new_user_session_path
+    end
   end
 
   def checklist

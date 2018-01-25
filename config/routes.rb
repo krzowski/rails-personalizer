@@ -10,10 +10,9 @@ Rails.application.routes.draw do
     delete 'signout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
-  get 'app_pages/home', as: 'home'
-  get 'app_pages/user'
-  get 'app_pages/checklist'
-  get 'app_pages/search'
+  get 'home', to: 'app_pages#home'
+  get 'list', to: 'app_pages#checklist'
+  get 'search', to: 'app_pages#search'
 
 
 

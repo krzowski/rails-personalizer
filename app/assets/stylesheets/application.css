@@ -207,7 +207,7 @@ html, body {
   display: block;
   width: 100%;
   height: 100%;
-  padding: 30px;
+  padding: 20px 30px;
   color: #DDD;
   font-size: 13px;
 }
@@ -279,6 +279,28 @@ html, body {
   padding-top: 10px;
 }
 
+.cancel-account {
+  border-top: 1px solid #BF6FE6;
+  margin-top: 20px;
+  padding-top: 15px;
+}
+.cancel-account h3 {
+  display: block;
+  float: left;
+  width: 200px;
+  line-height: 20px;
+}
+.cancel-account-button {
+  display: block;
+  float: right;
+  width: 300px;
+  height: 22px;
+  outline: none;
+  color: #CCC;
+  border: 1px solid #E9B0F9;
+  background-color: #A346E0;
+}
+
 .flash-notice { background-color: #8AD28C; }
 .flash-alert  { background-color: #F78A82; }
 
@@ -314,4 +336,21 @@ html, body {
 }
 .field_with_errors {
   display: inline;
+}
+
+.log-out-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 90px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-size: 13px;
+  background-color: #4d286b;
+  color: #CCC;
+  z-index: 7;
+  border-left: 1px solid #333;
+  border-bottom: 1px solid #333;
 }

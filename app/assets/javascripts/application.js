@@ -18,7 +18,7 @@
 
 /* CANVAS DRAWINGS */
 
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   
   if ( $('#calories_left_canvas').length ) { drawCaloriesLeftCanvas(); }
   if ( $('#calories_burned_canvas').length ) { drawCaloriesBurnedCanvas(); }
@@ -27,7 +27,7 @@ $(document).ready(function(){
   if ( $('#rolled').length ) { document.getElementById('rolled').style.right = '600px'; }
   
   $('#close_flash_message').on("click", function() {
-    $('#flash_message').css({ 'display': 'none' });
+    $('#flash_message').hide();
   });
 });
 

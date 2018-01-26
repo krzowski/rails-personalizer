@@ -10,7 +10,4 @@ class AppPagesController < ApplicationController
 
   def checklist
   end
-
-  def search
-  end
 end

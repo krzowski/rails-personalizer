@@ -102,6 +102,9 @@ html, body {
   transition: 0.1s linear;
   transform: rotate(45deg);
 }
+.panel-option:last-child:hover svg {
+  transform: rotate(0deg);
+}
 
 .main-panel {
   background-color: #2f164f;
@@ -336,21 +339,4 @@ html, body {
 }
 .field_with_errors {
   display: inline;
-}
-
-.log-out-link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: block;
-  width: 90px;
-  height: 35px;
-  line-height: 35px;
-  text-align: center;
-  font-size: 13px;
-  background-color: #4d286b;
-  color: #CCC;
-  z-index: 7;
-  border-left: 1px solid #333;
-  border-bottom: 1px solid #333;
 }

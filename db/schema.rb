@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180123125942) do
+ActiveRecord::Schema.define(version: 20180126115754) do
+
+  create_table "activities", force: :cascade do |t|
+    t.text     "name"
+    t.integer  "calories"
+    t.string   "type"
+    t.integer  "activities_calendar_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "activities", ["activities_calendar_id"], name: "index_activities_on_activities_calendar_id"
+
+  create_table "activities_calendars", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "activities_calendars", ["user_id"], name: "index_activities_calendars_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

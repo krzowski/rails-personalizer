@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require simple_calendar
  *= require_self
  */
 
@@ -339,4 +340,30 @@ html, body {
 }
 .field_with_errors {
   display: inline;
+}
+
+
+
+.simple-calendar {
+  .day {}
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
 }

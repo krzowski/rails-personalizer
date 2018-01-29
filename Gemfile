@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 # use devise as an authentication system
 gem 'devise'
 
-
+# use simple_calendar to display a calendar on checklist page
+gem "simple_calendar", "~> 2.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'

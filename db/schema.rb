@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126115754) do
+ActiveRecord::Schema.define(version: 20180130141153) do
 
   create_table "activities", force: :cascade do |t|
     t.text     "name"
@@ -20,9 +20,11 @@ ActiveRecord::Schema.define(version: 20180126115754) do
     t.integer  "activities_calendar_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "daily_activities_id"
   end
 
   add_index "activities", ["activities_calendar_id"], name: "index_activities_on_activities_calendar_id"
+  add_index "activities", ["daily_activities_id"], name: "index_activities_on_daily_activities_id"
 
   create_table "activities_calendars", force: :cascade do |t|
     t.integer  "user_id"
@@ -31,6 +33,14 @@ ActiveRecord::Schema.define(version: 20180126115754) do
   end
 
   add_index "activities_calendars", ["user_id"], name: "index_activities_calendars_on_user_id"
+
+  create_table "daily_activities", force: :cascade do |t|
+    t.integer  "activities_calendars_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "daily_activities", ["activities_calendars_id"], name: "index_daily_activities_on_activities_calendars_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

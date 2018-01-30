@@ -1,3 +1,5 @@
-<%= week_calendar number_of_weeks: 1 do |date| %>
-  <%= date %>
-<% end %>
+<div class="calendar-container">
+  <%= calendar number_of_days: 5 do |date| %>
+    <%= date %>
+  <% end %>
+</div>

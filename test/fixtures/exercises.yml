@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  calories: 1
+  daily_activity_id: 
+
+two:
+  name: MyText
+  calories: 1
+  daily_activity_id: 

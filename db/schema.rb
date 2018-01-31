@@ -11,20 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130141153) do
-
-  create_table "activities", force: :cascade do |t|
-    t.text     "name"
-    t.integer  "calories"
-    t.string   "type"
-    t.integer  "activities_calendar_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "daily_activities_id"
-  end
-
-  add_index "activities", ["activities_calendar_id"], name: "index_activities_on_activities_calendar_id"
-  add_index "activities", ["daily_activities_id"], name: "index_activities_on_daily_activities_id"
+ActiveRecord::Schema.define(version: 20180131125049) do
 
   create_table "activities_calendars", force: :cascade do |t|
     t.integer  "user_id"
@@ -41,6 +28,26 @@ ActiveRecord::Schema.define(version: 20180130141153) do
   end
 
   add_index "daily_activities", ["activities_calendars_id"], name: "index_daily_activities_on_activities_calendars_id"
+
+  create_table "exercises", force: :cascade do |t|
+    t.text     "name"
+    t.integer  "calories"
+    t.integer  "daily_activity_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "exercises", ["daily_activity_id"], name: "index_exercises_on_daily_activity_id"
+
+  create_table "foods", force: :cascade do |t|
+    t.text     "name"
+    t.integer  "calories"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "daily_activities_id"
+  end
+
+  add_index "foods", ["daily_activities_id"], name: "index_foods_on_daily_activities_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

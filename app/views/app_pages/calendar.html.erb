@@ -18,10 +18,12 @@
 
 
 <div id="food_tab" class="tab-container">
-  <%= form_for @food, url: food_path, method: 'post', html: {class: "food_form"} do |f| %>
-    <%= f.text_field :name %>
-    <%= f.number_field :calories %>
-    <%= date_field_tag(:date, Date.today) %>
+  <h3>Add food</h3>
+  <%= form_for @food, url: food_path, method: 'post', html: {class: "food-form"} do |f| %>
+    <%= f.text_field :name, placeholder: "Food name" %>
+    <%= f.number_field :calories, placeholder: "Amount of calories" %><br />
+    <span class="form-date">Date:</span>
+    <%= date_field_tag(:date, Date.today) %><br />
     <%= f.submit "Add food" %>
   <% end %>
 </div>

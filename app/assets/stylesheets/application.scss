@@ -346,6 +346,7 @@ html, body {
   display: none;
   width: 510px;
   float: left;
+  color: #EEE;
 }
 .tab-container.tab-active {
   display: block;
@@ -451,6 +452,53 @@ html, body {
 .activity-item:hover {
   color: #1acb70;
 }
-.activity-item.activity-active {
 
+.food-form {
+  display: block;
+  padding: 20px 20px;
+  input {
+    display: block;
+    height: 30px;
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    outline: none;
+    border: none;
+    color: #EEE;
+    text-align: center;
+    font-size: 13px;
+  }
+  input[type='text'] {
+    margin-bottom: 5px;
+    height: 35px;
+  }
+  input[type='number'] {
+    padding-left: 10px;
+    height: 35px;
+  }
+  input[type='text']::placeholder,
+  input[type='number']::placeholder {
+    font-size: 13px;
+    color: #CCC;    
+  }
+
+  span.form-date {
+    display: block;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  input[type='date'] {
+    padding-left: 40px;
+  }
+  input[type='submit'] {
+    border: 1px solid #E9B0F9;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+#food_tab h3 {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
 }

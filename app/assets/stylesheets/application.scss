@@ -417,6 +417,13 @@ html, body {
   }
   .cell-foods { color: #16dc6d; }
   .cell-exercises { color: #ff5833; }
+  .cell-foods,
+  .cell-exercises {
+    text-align: center;
+  }
+  .cell-foods {
+    padding-top: 4px;
+  }
 }
 
 .activity-item {

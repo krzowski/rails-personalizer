@@ -20,7 +20,8 @@
 <div id="food_tab" class="tab-container">
   <%= form_for @food, url: create_food_path, html: {class: "food_form"} do |f| %>
     <%= f.text_field :name %>
-    <%= f.date :body, size: "60x12" %>
+    <%= f.number_field :calories %>
+    <%= f.date_field :date %>
     <%= f.submit "Add food" %>
   <% end %>
 </div>

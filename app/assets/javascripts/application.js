@@ -38,7 +38,7 @@ function drawCaloriesEatenCanvas(){
   var ctx = canvas.getContext("2d");
 
   var current_value = parseInt(document.getElementById('calories-eaten').innerText)
-  var total_value = parseInt(document.getElementById('calories-value-hidden').innerText)
+  var total_value = parseInt(document.getElementById('calories-food-hidden').innerText)
   var progress = current_value / total_value
   if (progress > 1) { progress = 1 }
   
@@ -50,7 +50,7 @@ function drawCaloriesBurnedCanvas(){
   var ctx = canvas.getContext("2d");
 
   var current_value = parseInt(document.getElementById('calories-burned').innerText)
-  var total_value = parseInt(document.getElementById('calories-goal-hidden').innerText)
+  var total_value = parseInt(document.getElementById('calories-exercise-hidden').innerText)
   var progress = current_value / total_value
   if (progress > 1) { progress = 1 }
   
@@ -94,7 +94,7 @@ function drawCaloriesLeftProgress(){
   var ctx = canvas.getContext("2d");
 
   var current_value = parseInt(document.getElementById('calories-left-value').innerText)
-  var total_value = parseInt(document.getElementById('calories-value-hidden').innerText)
+  var total_value = parseInt(document.getElementById('calories-food-hidden').innerText)
   var progress = (total_value - current_value) / total_value
 
   ctx.beginPath();

@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20180202110108) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "food_goal"
-    t.integer  "exercise_goal"
+    t.integer  "food_goal",              default: 0
+    t.integer  "exercise_goal",          default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -1,11 +1,11 @@
 <div class="calories-main">
-  <span id="calories-value-hidden">2000</span>
-  <span id="calories-goal-hidden">400</span>
+  <span id="calories-food-hidden"><%= @food_goal %></span>
+  <span id="calories-exercise-hidden"><%= @exercise_goal %></span>
 
   <div class="calories-eaten">
     <span class="calories-data-title">EATEN</span>
     <div class="calories-data-info">
-      <span id="calories-eaten">800</span>
+      <span id="calories-eaten"><%= @food_current %></span>
       <p>KCAL</p>
     </div>
     <div class="calories-canvas-container">
@@ -18,7 +18,7 @@
 
   <div class="calories-left">
     <div class="calories-left-counter">
-      <span id="calories-left-value">1220</span>
+      <span id="calories-left-value"><%= @current_food_progress %></span>
       <p>LEFT</p>
     </div>
     <canvas id="calories_left_canvas" width="220" height=220>
@@ -30,7 +30,7 @@
   <div class="calories-burned">
     <span class="calories-data-title">BURNED</span>
     <div class="calories-data-info">
-      <span id="calories-burned">100</span>
+      <span id="calories-burned"><%= @exercise_current %></span>
       <p>KCAL</p>
     </div>
     <div class="calories-canvas-container">

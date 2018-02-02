@@ -5,15 +5,16 @@ class AppPagesController < ApplicationController
     unless current_user
       flash[:notice] = notice if notice
       redirect_to new_user_session_path
+    else
+      todays_activity = current_user.daily_activities.find_by(date: Date.today)
+      @food_goal = current_user.food_goal
+      @food_current = todays_activity.food_calories 
+      @current_food_progress = @food_goal - @food_current
+      @exercise_goal = current_user.exercise_goal
+      @exercise_current = todays_activity.exercise_calories
     end
-    todays_activity = current_user.daily_activities.find_by(date: Date.today)
-    @food_goal = current_user.food_goal
-    @food_current = todays_activity.food_calories 
-    @current_food_progress = @food_goal - @food_current
-    @exercise_goal = current_user.exercise_goal
-    @exercise_current = todays_activity.exercise_calories
   end
 
-  def checklist
+  def calendar
   end
 end

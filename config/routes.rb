@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   end
 
   get 'home', to: 'app_pages#home'
-  get 'list', to: 'app_pages#checklist'
-  get 'search', to: 'app_pages#search'
+  get 'calendar', to: 'app_pages#calendar'
 
 
 

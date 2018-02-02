@@ -342,12 +342,23 @@ html, body {
 
 
 
-.calendar-container {
-  display: block;
+.tab-container {
+  display: none;
   width: 510px;
   float: left;
+}
+.tab-container.tab-active {
+  display: block;
+}
+.activity-active {
+  background-color: #2f164f;
+}
+
+.calendar-container {
+  display: block;
   padding: 40px 20px;
 }
+
 .activity-options {
   display: block;
   float: left;

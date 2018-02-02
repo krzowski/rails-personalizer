@@ -26,12 +26,24 @@ $(document).on('turbolinks:load', function(){
 
   if ( $('#rolled').length ) { document.getElementById('rolled').style.right = '600px'; }
   
-  $('#close_flash_message').on("click", function() {
+  $('#close_flash_message').click(function() {
     $('#flash_message').hide();
   });
+
+  $('#open_calendar_tab').click({id: 'open_calendar_tab'}, changeActiveTab);
+  $('#open_food_tab').click({id: 'open_food_tab'}, changeActiveTab);
+  $('#open_exercise_tab').click({id: 'open_exercise_tab'}, changeActiveTab);
+  $('#open_goals_tab').click({id: 'open_goals_tab'}, changeActiveTab);
 });
 
 
+function changeActiveTab(event) {
+  $(".activity-active").removeClass('activity-active');
+  $(".tab-active").removeClass('tab-active');
+  $("#" + event.data.id).addClass('activity-active');
+  $("#" + event.data.id.substr(5)).addClass('tab-active');
+  console.log("yeaa")
+}
 
 function drawCaloriesEatenCanvas(){
   var canvas = document.getElementById("calories_eaten_canvas");

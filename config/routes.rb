@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   get 'home', to: 'app_pages#home'
   get 'calendar', to: 'app_pages#calendar'
 
-
+  resource :food, only: [:create, :destroy]
+  resource :exercise, only: [:create, :destroy]
 
   
   # The priority is based upon order of creation: first created -> highest priority.

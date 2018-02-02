@@ -16,5 +16,6 @@ class AppPagesController < ApplicationController
   end
 
   def calendar
+    @food = Food.new
   end
 end

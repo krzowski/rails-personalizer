@@ -1,22 +1,50 @@
-<div class="calendar-container">
-  <%= week_calendar number_of_weeks: 2 do |date| %>
-    <span class="table-cell-date"><%= date.strftime("%d %b") %></span>
-    <div class="table-cell-counters">
-      <% day = current_user.daily_activities.find_by(date: date) %>
-      <% if day %>
-        <p class="cell-foods">Eaten<br /><%= day.food_calories %></p>
-        <p class="cell-exercises">Burned<br /><%= day.exercise_calories %></p>
-      <% else %>
-        <p class="cell-foods">Eaten<br />0</p>
-        <p class="cell-exercises">Burned<br />0</p>
-      <% end %>
-    </div>
+<div id="calendar_tab" class="tab-container tab-active">
+  <div class="calendar-container">
+    <%= week_calendar number_of_weeks: 2 do |date| %>
+      <span class="table-cell-date"><%= date.strftime("%d %b") %></span>
+      <div class="table-cell-counters">
+        <% day = current_user.daily_activities.find_by(date: date) %>
+        <% if day %>
+          <p class="cell-foods">Eaten<br /><%= day.food_calories %></p>
+          <p class="cell-exercises">Burned<br /><%= day.exercise_calories %></p>
+        <% else %>
+          <p class="cell-foods">Eaten<br />0</p>
+          <p class="cell-exercises">Burned<br />0</p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<div id="food_tab" class="tab-container">
+  <%= form_for @food, url: create_food_path, html: {class: "food_form"} do |f| %>
+    <%= f.text_field :name %>
+    <%= f.date :body, size: "60x12" %>
+    <%= f.submit "Add food" %>
   <% end %>
 </div>
 
+
+<div id="exercise_tab" class="tab-container">
+  fds
+</div>
+
+
+<div id="goals_tab" class="tab-container">
+  fds
+</div>
+
+
+
+
+
+
+
+
 <aside class="activity-options">
-  <div class="activity-item" id="activities_show_calendar">Show Calendar</div>
-  <div class="activity-item" id="activities_add_food">Add Food</div>
-  <div class="activity-item" id="activities_add_exercise">Add Activity</div>
-  <div class="activity-item" id="activities_change_goals">Change Goals</div>
+  <div class="activity-item activity-active" id="open_calendar_tab">Show Calendar</div>
+  <div class="activity-item" id="open_food_tab">Add Food</div>
+  <div class="activity-item" id="open_exercise_tab">Add Activity</div>
+  <div class="activity-item" id="open_goals_tab">Change Goals</div>
 </aside>

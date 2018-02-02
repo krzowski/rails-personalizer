@@ -18,7 +18,7 @@
 
   <div class="calories-left">
     <div class="calories-left-counter">
-      <span id="calories-left-value"><%= @current_food_progress %></span>
+      <span id="calories-left-value"><%= @current_food_progress > 0 ? @current_food_progress : 0 %></span>
       <p>LEFT</p>
     </div>
     <canvas id="calories_left_canvas" width="220" height=220>

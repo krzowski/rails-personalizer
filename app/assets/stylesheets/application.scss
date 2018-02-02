@@ -16,6 +16,7 @@
 
 html, body {
   width: 100%;
+  min-width: 690px;
   height: 100%;
   font-family: 'Roboto', sans-serif;
 }
@@ -309,6 +310,7 @@ html, body {
   display: block;
   padding-left: 40px;
   padding-right: 40%;
+  min-width: 690px;
   position: absolute;
   z-index: 2;
   width: 100%;
@@ -342,8 +344,9 @@ html, body {
 
 .calendar-container {
   display: block;
-  float: left;
   width: 510px;
+  float: left;
+  padding: 40px 20px;
 }
 .activity-options {
   display: block;
@@ -358,28 +361,62 @@ html, body {
   vertical-align: center;
   padding-top: 20px;
 }
+
 .simple-calendar {
-  .day {}
+  color: #EEE;
+  font-size: 14px;
 
-  .wday-0 {}
-  .wday-1 {}
-  .wday-2 {}
-  .wday-3 {}
-  .wday-4 {}
-  .wday-5 {}
-  .wday-6 {}
-
-  .today {}
-  .past {}
-  .future {}
-
-  .start-date {}
-
-  .prev-month {}
-  .next-month { }
-  .current-month {}
-
-  .has-events {}
+  .calendar-heading {
+    margin-bottom: 30px;
+  }
+  .calendar-heading a:first-child {
+    width: 20%;
+    float: left;
+  }
+  .calendar-heading span {
+    float: left;
+    width: 60%;
+    text-align: center;
+  }
+  .calendar-heading a:last-child {
+    width: 20%;
+    float: right;
+    text-align: right;
+  }
+  .calendar-heading::after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+  
+  table {
+    width: 100%;
+  }
+  table thead tr {
+    height: 40px;
+    line-height: 30px;
+  }
+  table tbody tr {
+    height: 80px;
+    font-size: 13px;
+  }
+  .day {
+    border-right: 1px solid #581F85;
+    width: calc(100% / 7);
+  }
+  .day:last-child {
+    border: none;
+  }
+  .table-cell-date {
+    display: block;
+    height: 20px;
+    padding-top: 4px;
+    width: 100%;
+    text-align: center;
+    background-color: #4d286b;
+  }
+  .cell-foods { color: #16dc6d; }
+  .cell-exercises { color: #ff5833; }
 }
 
 .activity-item {

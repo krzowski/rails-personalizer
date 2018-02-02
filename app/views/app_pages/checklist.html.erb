@@ -1,6 +1,16 @@
 <div class="calendar-container">
-  <%= calendar number_of_days: 5 do |date| %>
-    <%= date %>
+  <%= week_calendar number_of_weeks: 2 do |date| %>
+    <span class="table-cell-date"><%= date.strftime("%d %b") %></span>
+    <div class="table-cell-counters">
+      <% day = current_user.daily_activities.find_by(date: date) %>
+      <% if day %>
+        <p class="cell-foods">Eaten<br /><%= day.food_calories %></p>
+        <p class="cell-exercises">Burned<br /><%= day.exercise_calories %></p>
+      <% else %>
+        <p class="cell-foods">Eaten<br />0</p>
+        <p class="cell-exercises">Burned<br />0</p>
+      <% end %>
+    </div>
   <% end %>
 </div>
 

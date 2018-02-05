@@ -7,9 +7,9 @@ class FoodsController < ApplicationController
 
     food = activities_list.foods.new(food_params)
     if food.save
-      flash[:notice] = "food was added to the list"
+      flash[:notice] = "Food was added to the list"
     else
-      flash[:alert] = "food didnt save"
+      flash[:alert] = "Something went wrong. Food isn't added"
     end
     redirect_to calendar_path
   end

@@ -380,6 +380,10 @@ html, body {
 
   .calendar-heading {
     margin-bottom: 30px;
+
+    a:hover {
+      color: #AAA;
+    }
   }
   .calendar-heading a:first-child {
     width: 20%;
@@ -453,7 +457,7 @@ html, body {
   color: #1acb70;
 }
 
-.food-form {
+.add-form {
   display: block;
   padding: 20px 20px;
   input {
@@ -461,7 +465,7 @@ html, body {
     height: 30px;
     width: 70%;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     outline: none;
     border: none;
     color: #EEE;
@@ -479,7 +483,7 @@ html, body {
   input[type='text']::placeholder,
   input[type='number']::placeholder {
     font-size: 13px;
-    color: #CCC;    
+    color: #AAA;    
   }
 
   span.form-date {
@@ -497,7 +501,8 @@ html, body {
     background-color: rgba(0, 0, 0, 0.3);
   }
 }
-#food_tab h3 {
+#food_tab h3,
+#exercise_tab h3 {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 10px;

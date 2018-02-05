@@ -15,6 +15,9 @@ class FoodsController < ApplicationController
   end
 
   def destroy
+    food = current_user.foods.find(params[:id])
+    food.destroy
+    redirect_to :back
   end
 
   private

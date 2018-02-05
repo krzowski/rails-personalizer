@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   get 'calendar', to: 'app_pages#calendar'
   get 'day', to: 'app_pages#day'
 
-  resource :food, only: [:create, :destroy]
-  resource :exercise, only: [:create, :destroy]
+  resources :foods, only: [:create, :destroy]
+  resources :exercises, only: [:create, :destroy]
 
   patch 'goals', to: 'users#change_goals'
 

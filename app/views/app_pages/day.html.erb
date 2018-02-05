@@ -29,7 +29,7 @@
               <td class="body-count"><%= i+1 %></td>
               <td class="body-name"><%= food.name %></td>
               <td class="body-calories"><%= food.calories %></td>
-              <td class="body-remove"><a href="#">-X-</a></td>
+              <td class="body-remove"><%= link_to '-X-', food_path(food), method: :delete %></td>
             </tr>
           <% end %>
         </tbody>
@@ -53,7 +53,7 @@
               <td class="body-count"><%= i+1 %></td>
               <td class="body-name"><%= exercise.name %></td>
               <td class="body-calories"><%= exercise.calories %></td>
-              <td class="body-remove"><a href="#">-X-</a></td>
+              <td class="body-remove"><%= link_to '-X-', exercise_path(exercise), method: :delete %></td>
             </tr>
           <% end %>
         </tbody>
@@ -65,7 +65,7 @@
 
 <div id="food_tab" class="tab-container">
   <h3>Add food</h3>
-  <%= form_for @food, url: food_path, method: 'post', html: {class: "add-form"} do |f| %>
+  <%= form_for @food, url: {controller: "foods", action: "create"}, html: {class: "add-form"} do |f| %>
     <%= f.text_field :name, placeholder: "Food name" %>
     <%= f.number_field :calories, placeholder: "Amount of calories" %><br />
     <span class="form-date">Date:</span>
@@ -77,7 +77,7 @@
 
 <div id="exercise_tab" class="tab-container">
   <h3>Add activity</h3>
-  <%= form_for @exercise, url: exercise_path, method: 'post', html: {class: "add-form"} do |f| %>
+  <%= form_for @exercise, url: {controller: "exercises", action: "create"}, html: {class: "add-form"} do |f| %>
     <%= f.text_field :name, placeholder: "Activity name" %>
     <%= f.number_field :calories, placeholder: "Amount of calories" %><br />
     <span class="form-date">Date:</span>

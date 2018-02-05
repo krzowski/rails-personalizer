@@ -15,6 +15,9 @@ class ExercisesController < ApplicationController
   end
 
   def destroy
+    exercise = current_user.exercises.find(params[:id])
+    exercise.destroy
+    redirect_to :back
   end
 
 

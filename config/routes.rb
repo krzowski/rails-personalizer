@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get 'home', to: 'app_pages#home'
   get 'calendar', to: 'app_pages#calendar'
+  get 'day', to: 'app_pages#day'
 
   resource :food, only: [:create, :destroy]
   resource :exercise, only: [:create, :destroy]

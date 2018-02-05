@@ -1,20 +1,64 @@
 <div id="calendar_tab" class="tab-container tab-active">
-  <div class="calendar-container">
-    <%= week_calendar number_of_weeks: 2 do |date| %>
-      <%= link_to day_path(date: date), class: "form-day-link" do %>
-        <span class="table-cell-date"><%= date.strftime("%d %b") %></span>
-        <div class="table-cell-counters">
-          <% day = current_user.daily_activities.find_by(date: date) %>
-          <% if day %>
-            <p class="cell-foods">Eaten<br /><%= day.food_calories %></p>
-            <p class="cell-exercises">Burned<br /><%= day.exercise_calories %></p>
-          <% else %>
-            <p class="cell-foods">Eaten<br />0</p>
-            <p class="cell-exercises">Burned<br />0</p>
+  <div class="day-container">
+    
+    <div class="day-info">
+      <%= link_to "< Back to the calendar", calendar_path, class: "calendar-link" %>
+      
+      <div class="day-date"><%= @days_activity.date.strftime("%e %B %y") %></div>
+    </div>
+
+    <div class="day-tabs">
+      <div id="open_food_table" class="active-day-tab">Food tab</div>
+      <div id="open_exercise_table">Exercise tab</div>
+    </div>
+    
+    <div class="day-table-container day-table-active" id="food_table">
+      <table>
+        <thead>
+          <tr>
+            <td class="head-count">#</td>
+            <td class="head-name">Name</td>
+            <td class="head-calories">Calories</td>
+            <td class="head-remove">Remove</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @foods.each_with_index do |food, i| %>
+            <tr>
+              <td class="body-count"><%= i+1 %></td>
+              <td class="body-name"><%= food.name %></td>
+              <td class="body-calories"><%= food.calories %></td>
+              <td class="body-remove"><a href="#">-X-</a></td>
+            </tr>
           <% end %>
-        </div>
-      <% end %>
-    <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="day-table-container" id="exercise_table">
+      <table>
+        <thead>
+          <tr>
+            <td class="head-count">#</td>
+            <td class="head-name">Name</td>
+            <td class="head-calories">Calories</td>
+            <td class="head-remove">Remove</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @exercises.each_with_index do |exercise, i| %>
+            <tr>
+              <td class="body-count"><%= i+1 %></td>
+              <td class="body-name"><%= exercise.name %></td>
+              <td class="body-calories"><%= exercise.calories %></td>
+              <td class="body-remove"><a href="#">-X-</a></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 

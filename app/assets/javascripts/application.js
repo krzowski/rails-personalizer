@@ -30,19 +30,27 @@ $(document).on('turbolinks:load', function(){
     $('#flash_message').hide();
   });
 
-  $('#open_calendar_tab').click({id: 'open_calendar_tab'}, changeActiveTab);
-  $('#open_food_tab').click({id: 'open_food_tab'}, changeActiveTab);
-  $('#open_exercise_tab').click({id: 'open_exercise_tab'}, changeActiveTab);
-  $('#open_goals_tab').click({id: 'open_goals_tab'}, changeActiveTab);
+  $('#open_calendar_tab').click({id: 'open_calendar_tab'}, changeActiveCalendarTab);
+  $('#open_food_tab').click({id: 'open_food_tab'}, changeActiveCalendarTab);
+  $('#open_exercise_tab').click({id: 'open_exercise_tab'}, changeActiveCalendarTab);
+  $('#open_goals_tab').click({id: 'open_goals_tab'}, changeActiveCalendarTab);
+
+  $('#open_food_table').click({id: 'open_food_table'}, changeActiveDayTab);
+  $('#open_exercise_table').click({id: 'open_exercise_table'}, changeActiveDayTab);
 });
 
 
-function changeActiveTab(event) {
+function changeActiveDayTab(event) {
+  $('.active-day-tab').removeClass('active-day-tab');
+  $('#' + event.data.id).addClass('active-day-tab');
+  $('.day-table-active').removeClass('day-table-active');
+  $("#" + event.data.id.substr(5)).addClass('day-table-active');
+}
+function changeActiveCalendarTab(event) {
   $(".activity-active").removeClass('activity-active');
   $(".tab-active").removeClass('tab-active');
   $("#" + event.data.id).addClass('activity-active');
   $("#" + event.data.id.substr(5)).addClass('tab-active');
-  console.log("yeaa")
 }
 
 function drawCaloriesEatenCanvas(){

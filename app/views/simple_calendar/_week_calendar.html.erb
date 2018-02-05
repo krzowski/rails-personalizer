@@ -1,6 +1,6 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: '< Previous'), calendar.url_for_previous_view %>
+    <%= link_to t('simple_calendar.previous', default: '< Previous'), (calendar.url_for_previous_view[0..-11] + (calendar.url_for_previous_view[-10..-1].to_date - 1.week).to_s ) %>
     <% if calendar.number_of_weeks == 1 %>
       <span class="calendar-title">Week <%= calendar.week_number %></span>
     <%else%>

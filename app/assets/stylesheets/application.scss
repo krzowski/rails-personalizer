@@ -507,3 +507,54 @@ html, body {
   margin-top: 40px;
   margin-bottom: 10px;
 }
+
+#goals_tab h3 {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+.goals-form {
+  .goals-group {
+    display: block;
+    margin: 10px auto 20px;
+    width: 50%;
+  }
+  .goals-group::after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+  .goal-label {
+    display: block;
+    float: left;
+    width: 30%;
+    text-align: left;
+    padding-right: 27px;
+    padding-top: 8px;
+    font-size: 13px;
+  }
+  .calorie-goal-input {
+    display: block;
+    height: 30px;
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    outline: none;
+    border: none;
+    color: #EEE;
+    text-align: center;
+    font-size: 13px;
+  }
+  .calorie-goal-submit {
+    width: 50%;
+    display: block;
+    margin: 20px auto 0;
+  }
+
+  input[type='submit'] {
+    border: 1px solid #E9B0F9;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 30px;
+    color: #EEE;
+  }
+}

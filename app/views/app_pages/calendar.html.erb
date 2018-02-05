@@ -45,12 +45,12 @@
   <h3>Change your calorie goals</h3>
   <%= form_tag goals_path, method: :patch, class: 'goals-form' do %>
     <div class="goals-group">
-      <%= label_tag 'Food calorie goal', "Food:", class: 'goal-label' %>
-      <%= number_field_tag 'Food calorie goal', current_user.food_goal , class: 'calorie-goal-input' %>
+      <%= label_tag 'food_goal', "Food:", class: 'goal-label' %>
+      <%= number_field_tag 'food_goal', current_user.food_goal , class: 'calorie-goal-input' %>
     </div>
     <div class="goals-group">
-      <%= label_tag 'Activity calorie goal', "Activity:", class: 'goal-label' %>
-      <%= number_field_tag 'Activity calorie goal', current_user.exercise_goal, class: 'calorie-goal-input' %>
+      <%= label_tag 'exercise_goal', "Activity:", class: 'goal-label' %>
+      <%= number_field_tag 'exercise_goal', current_user.exercise_goal, class: 'calorie-goal-input' %>
     </div>
     <%= submit_tag "Change goals", class: "calorie-goal-submit" %>
   <% end %>

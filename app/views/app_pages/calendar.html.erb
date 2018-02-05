@@ -22,10 +22,10 @@
 <div id="food_tab" class="tab-container">
   <h3>Add food</h3>
   <%= form_for @food, url: {controller: "foods", action: "create"}, html: {class: "add-form"} do |f| %>
-    <%= f.text_field :name, placeholder: "Food name" %>
-    <%= f.number_field :calories, placeholder: "Amount of calories" %><br />
+    <%= f.text_field :name, placeholder: "Food name", required: true %>
+    <%= f.number_field :calories, placeholder: "Amount of calories", required: true %><br />
     <span class="form-date">Date:</span>
-    <%= date_field_tag(:date, Date.today) %><br />
+    <%= date_field_tag(:date, Date.today, required: true) %><br />
     <%= f.submit "Add food" %>
   <% end %>
 </div>
@@ -34,10 +34,10 @@
 <div id="exercise_tab" class="tab-container">
   <h3>Add activity</h3>
   <%= form_for @exercise, url: {controller: "exercises", action: "create"}, html: {class: "add-form"} do |f| %>
-    <%= f.text_field :name, placeholder: "Activity name" %>
-    <%= f.number_field :calories, placeholder: "Amount of calories" %><br />
+    <%= f.text_field :name, placeholder: "Activity name", required: true %>
+    <%= f.number_field :calories, placeholder: "Amount of calories", required: true %><br />
     <span class="form-date">Date:</span>
-    <%= date_field_tag(:date, Date.today) %><br />
+    <%= date_field_tag(:date, Date.today, required: true) %><br />
     <%= f.submit "Add activity" %>
   <% end %>
 </div>
@@ -48,11 +48,11 @@
   <%= form_tag goals_path, method: :patch, class: 'goals-form' do %>
     <div class="goals-group">
       <%= label_tag 'food_goal', "Food:", class: 'goal-label' %>
-      <%= number_field_tag 'food_goal', current_user.food_goal , class: 'calorie-goal-input' %>
+      <%= number_field_tag 'food_goal', current_user.food_goal , class: 'calorie-goal-input', required: true %>
     </div>
     <div class="goals-group">
       <%= label_tag 'exercise_goal', "Activity:", class: 'goal-label' %>
-      <%= number_field_tag 'exercise_goal', current_user.exercise_goal, class: 'calorie-goal-input' %>
+      <%= number_field_tag 'exercise_goal', current_user.exercise_goal, class: 'calorie-goal-input', required: true %>
     </div>
     <%= submit_tag "Change goals", class: "calorie-goal-submit" %>
   <% end %>

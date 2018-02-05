@@ -5,7 +5,7 @@ class ExercisesController < ApplicationController
       activities_list = current_user.daily_activities.create(date: params[:date])
     end
 
-    exercise = activities_list.foods.new(exercise_params)
+    exercise = activities_list.exercises.new(exercise_params)
     if exercise.save
       flash[:notice] = "Activity was added to the list"
     else

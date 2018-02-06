@@ -11,13 +11,14 @@ class FoodsController < ApplicationController
     else
       flash[:alert] = "Something went wrong. Food isn't added"
     end
-    redirect_to calendar_path
+    redirect_to calendar_path(start_date: params[:date])
   end
 
   def destroy
     food = current_user.foods.find(params[:id])
     food.destroy
-    redirect_to :back
+
+    render nothing: true
   end
 
   private

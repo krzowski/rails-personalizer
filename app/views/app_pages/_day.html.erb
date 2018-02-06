@@ -1,0 +1,61 @@
+<!-- goes inside #day_tab -->
+<div class="day-container">
+  
+  <div class="day-info">
+    <%= link_to "< Back to the calendar", calendar_path(start_date: @days_activity[:date]),class: "calendar-link" %>    
+    <div class="day-date"><%= @days_activity.date.strftime("%e %B %y") %></div>
+  </div>
+
+  <div class="day-tabs">
+    <div id="open_food_table" class="active-day-tab">Food tab</div>
+    <div id="open_exercise_table">Exercise tab</div>
+  </div>
+  
+  <div class="day-table-container day-table-active" id="food_table">
+    <table>
+      <thead>
+        <tr>
+          <td class="head-count">#</td>
+          <td class="head-name">Name</td>
+          <td class="head-calories">Calories</td>
+          <td class="head-remove">Remove</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @foods.each_with_index do |food, i| %>
+          <tr>
+            <td class="body-count"><%= i+1 %></td>
+            <td class="body-name"><%= food.name %></td>
+            <td class="body-calories"><%= food.calories %></td>
+            <td class="body-remove"><%= link_to '-X-', food_path(food), remote: true, method: :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="day-table-container" id="exercise_table">
+    <table>
+      <thead>
+        <tr>
+          <td class="head-count">#</td>
+          <td class="head-name">Name</td>
+          <td class="head-calories">Calories</td>
+          <td class="head-remove">Remove</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @exercises.each_with_index do |exercise, i| %>
+          <tr>
+            <td class="body-count"><%= i+1 %></td>
+            <td class="body-name"><%= exercise.name %></td>
+            <td class="body-calories"><%= exercise.calories %></td>
+            <td class="body-remove"><%= link_to '-X-', exercise_path(exercise), remote: true, method: :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

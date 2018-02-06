@@ -11,13 +11,14 @@ class ExercisesController < ApplicationController
     else
       flash[:alert] = "Something went wrong. Exercise isn't added"
     end
-    redirect_to calendar_path
+    redirect_to calendar_path(start_date: params[:date])
   end
 
   def destroy
     exercise = current_user.exercises.find(params[:id])
     exercise.destroy
-    redirect_to :back
+
+    render nothing: true
   end
 
 

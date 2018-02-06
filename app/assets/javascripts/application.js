@@ -35,8 +35,16 @@ $(document).on('turbolinks:load', function(){
   $('#open_exercise_tab').click({id: 'open_exercise_tab'}, changeActiveCalendarTab);
   $('#open_goals_tab').click({id: 'open_goals_tab'}, changeActiveCalendarTab);
 
-  $('#open_food_table').click({id: 'open_food_table'}, changeActiveDayTab);
-  $('#open_exercise_table').click({id: 'open_exercise_table'}, changeActiveDayTab);
+  $('#calendar_tab').on('click', '#open_food_table', {id: 'open_food_table'}, changeActiveDayTab);
+  $('#calendar_tab').on('click', '#open_exercise_table', {id: 'open_exercise_table'}, changeActiveDayTab);
+  $('#calendar_tab').on('click', '.calendar-link', function(){
+    $("#day_tab").hide();
+    $("#calendar_default").show();
+  });
+  $('#calendar_tab').on('click', '.body-remove a', function() {
+    $(this).parent().parent().remove();
+  })
+
 
   $('#panel_link').click( function(evt){
     evt.preventDefault();

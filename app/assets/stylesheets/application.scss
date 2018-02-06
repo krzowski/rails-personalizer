@@ -369,7 +369,7 @@ html, body {
 }
 .activity-options {
   display: block;
-  float: left;
+  float: right;
   width: 90px;
   height: 100%;
   background-color: #4d286b;
@@ -576,12 +576,13 @@ html, body {
   .day-info {
     display: block;
   }
-  .day-info a {
+  .day-info .calendar-link {
     display: inline-block;
     width: 30%;
   }
-  .day-info a:hover {
+  .day-info .calendar-link:hover {
     color: #AAA;
+    cursor: pointer;
   }
   .day-info .day-date {
     display: inline-block;
@@ -688,4 +689,15 @@ html, body {
     background-color: #F78A82;
     cursor: pointer;
   }
+}
+
+#calendar_default {
+  display: block;
+}
+#day_tab {
+  display: none;
+}
+#day_tab {
+  width: 100%;
+  height: 100%;
 }

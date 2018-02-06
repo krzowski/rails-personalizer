@@ -27,14 +27,15 @@ class AppPagesController < ApplicationController
   end
 
   def day
-    @food = Food.new
-    @exercise = Exercise.new
-
     @days_activity = current_user.daily_activities.find_by(date: params[:date])
     unless @days_activity
       @days_activity = current_user.daily_activities.create(date: params[:date])
     end
     @foods = @days_activity.foods
     @exercises = @days_activity.exercises
+
+    respond_to do |format|
+      format.js { render 'day', layout: false }
+    end
   end
 end

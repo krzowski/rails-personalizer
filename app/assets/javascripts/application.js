@@ -37,8 +37,14 @@ $(document).on('turbolinks:load', function(){
 
   $('#open_food_table').click({id: 'open_food_table'}, changeActiveDayTab);
   $('#open_exercise_table').click({id: 'open_exercise_table'}, changeActiveDayTab);
-});
 
+  $('#panel_link').click( function(evt){
+    evt.preventDefault();
+    var link = $(this).attr("href");
+    setTimeout( function(){ window.location.href = link }, 1000 );
+    document.getElementsByClassName('side-panel')[0].style.right = '0px';
+  } )
+});
 
 function changeActiveDayTab(event) {
   $('.active-day-tab').removeClass('active-day-tab');

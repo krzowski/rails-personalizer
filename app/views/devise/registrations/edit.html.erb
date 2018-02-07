@@ -26,13 +26,22 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Update" %>
+      <% if current_user == User.find_by(email: 'test@example.com') %>
+        <%= submit_tag "Editing is disabled for test user", disabled: true %>
+      <% else %>
+        <%= f.submit "Update" %>
+      <% end %>
     </div>
   <% end %>
   
   <div class="cancel-account">
     <h3>Cancel account:</h3>
 
-    <%= button_to "Cancel my account", registration_path(resource_name), { data: { confirm: "Are you sure?" }, method: :delete, class: 'cancel-account-button'} %>
+
+    <% if current_user == User.find_by(email: 'test@example.com') %>
+      <%= submit_tag "You can't cancel test user account", class: 'cancel-account-button', disabled: true %>
+    <% else %>
+      <%= button_to "Cancel my account", registration_path(resource_name), { data: { confirm: "Are you sure?" }, method: :delete, class: 'cancel-account-button'} %>
+    <% end %>
   </div>
 </div>

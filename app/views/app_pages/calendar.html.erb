@@ -2,13 +2,13 @@
   <div id="calendar_default">
     <div class="calendar-container">
       <%= week_calendar number_of_weeks: 2 do |date| %>
-        <%= link_to day_path(date: date), remote: true, class: "form-day-link" do %>
+        <%= link_to day_path(date: date), remote: true, id: "#{date}", class: "form-day-link" do %>
           <span class="table-cell-date"><%= date.strftime("%d %b") %></span>
           <div class="table-cell-counters">
             <% day = current_user.daily_activities.find_by(date: date) %>
             <% if day %>
-              <p class="cell-foods">Eaten<br /><%= day.food_calories %></p>
-              <p class="cell-exercises">Burned<br /><%= day.exercise_calories %></p>
+              <p class="cell-foods">Eaten<br /><span class="cell-foods-count"><%= day.food_calories %></span></p>
+              <p class="cell-exercises">Burned<br /><span class="cell-exercises-count"><%= day.exercise_calories %></span></p>
             <% else %>
               <p class="cell-foods">Eaten<br />0</p>
               <p class="cell-exercises">Burned<br />0</p>

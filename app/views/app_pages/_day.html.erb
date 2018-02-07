@@ -1,8 +1,9 @@
 <!-- goes inside #day_tab -->
 <div class="day-container">
-  
+  <div id="day_date_hidden"><%= @days_activity.date.strftime("%Y-%m-%d") %></div>
   <div class="day-info">
-    <%= link_to "< Back to the calendar", calendar_path(start_date: @days_activity[:date]),class: "calendar-link" %>    
+    <span class="calendar-link">< Back to the calendar</span>
+    
     <div class="day-date"><%= @days_activity.date.strftime("%e %B %y") %></div>
   </div>
 

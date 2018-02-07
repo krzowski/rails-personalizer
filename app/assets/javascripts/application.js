@@ -20,32 +20,51 @@
 
 $(document).on('turbolinks:load', function(){
   
+  // draw calories' progress canvases in the main tab
   if ( $('#calories_left_canvas').length ) { drawCaloriesLeftCanvas(); }
   if ( $('#calories_burned_canvas').length ) { drawCaloriesBurnedCanvas(); }
   if ( $('#calories_eaten_canvas').length ) { drawCaloriesEatenCanvas(); }
 
+  // expand the main panel on root path entry
   if ( $('#rolled').length ) { document.getElementById('rolled').style.right = '600px'; }
   
   $('#close_flash_message').click(function() {
     $('#flash_message').hide();
   });
 
+  // manage calendar tab view
   $('#open_calendar_tab').click({id: 'open_calendar_tab'}, changeActiveCalendarTab);
   $('#open_food_tab').click({id: 'open_food_tab'}, changeActiveCalendarTab);
   $('#open_exercise_tab').click({id: 'open_exercise_tab'}, changeActiveCalendarTab);
   $('#open_goals_tab').click({id: 'open_goals_tab'}, changeActiveCalendarTab);
 
+  // manage DailyActivity tab view - bind event to #calendar_tab so it stays active on ajax change
   $('#calendar_tab').on('click', '#open_food_table', {id: 'open_food_table'}, changeActiveDayTab);
   $('#calendar_tab').on('click', '#open_exercise_table', {id: 'open_exercise_table'}, changeActiveDayTab);
   $('#calendar_tab').on('click', '.calendar-link', function(){
     $("#day_tab").hide();
     $("#calendar_default").show();
   });
+
+  // remove item from the foods/exercises list without refreshing
   $('#calendar_tab').on('click', '.body-remove a', function() {
+    // change caloric values in calendar/affected day cell
+    var id = $('#day_date_hidden').html();
+    var amount = parseInt( $(this).parent().siblings(".body-calories").html() , 10 );
+    var type = $(".day-table-active").attr("id");
+    if (type == 'food_table') {
+      var node = $("#" + id + " .cell-foods-count");
+    } else {
+      var node = $("#" + id + " .cell-exercises-count");
+    }
+    var value = parseInt( node.html() , 10 ) - amount;
+    node.html( value );
+
+    // remove nod
     $(this).parent().parent().remove();
   })
 
-
+  // roll the main panel when requested root path
   $('#panel_link').click( function(evt){
     evt.preventDefault();
     var link = $(this).attr("href");

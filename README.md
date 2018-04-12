@@ -2,7 +2,7 @@
 
 ----
 ## about the project
-Personalizer is a Rails application inspired by a [design conspect by Husam Elfaki from dribbble](https://dribbble.com/shots/2457364-Shot-098-Calories-Calculator). It allows users to track their daily calories consumption from food and burned calories from exercises. 
+Personalizer is a Rails application inspired by a [design concept by Husam Elfaki from dribbble](https://dribbble.com/shots/2457364-Shot-098-Calories-Calculator). It allows users to track their daily calories consumption from food and burned calories from exercises. 
 
 ----
 Personalizer was developed with:

@@ -1,10 +1,9 @@
 # Personalizer - calories consumption tracker  
 
-----
 ## about the project
-Personalizer is a Rails application inspired by a [design concept by Husam Elfaki from dribbble](https://dribbble.com/shots/2457364-Shot-098-Calories-Calculator). It allows users to track their daily calories consumption from food and burned calories from exercises. 
+Personalizer is a Rails application inspired by a [design concept by Husam Elfaki from dribbble](https://dribbble.com/shots/2457364-Shot-098-Calories-Calculator). It allows users to track their daily calories consumption and burned calories from exercises. 
 
-----
+
 Personalizer was developed with:
 
 * Devise as an authentication library, 
@@ -12,7 +11,6 @@ Personalizer was developed with:
 * jquery + ajax
 * simple_calendar gem to display calendar by two-weeks intervals, 
 
-----
 ## try it out
 with test credentials:
 
@@ -20,7 +18,6 @@ with test credentials:
 
 or create your own account!
 
-----
 ## local setup
 download the code:
 
@@ -29,6 +26,10 @@ download the code:
 navigate to root folder and install dependencies with:
 
     cd rails-personalizer/ && bundle update
+
+run database migrations:
+
+    rake db:migrate
 
 start server with:
 

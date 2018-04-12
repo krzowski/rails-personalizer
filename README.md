@@ -9,10 +9,10 @@ Personalizer was developed with:
 * Devise as an authentication library, 
 * html canvas to draw progress bars/squares
 * jquery + ajax
-* simple_calendar gem to display calendar by two-weeks intervals, 
+* simple_calendar gem to display calendar by two-week intervals, 
 
 ## try it out
-with test credentials:
+visit [project's website](http://personalizer.herokuapp.com) and login with test credentials:
 
 * email: testaccount@example.com, password: qwerty
 

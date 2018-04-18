@@ -35,8 +35,7 @@
     <div class="side-panel-fill"></div>
     <ul class="panel-options">
       <li class="panel-option">
-        <!-- link needs to request a full url for rolling the panel -->
-        <%= link_to root_url, { class: "panel-option-link", id: "panel_link"} do %>
+        <% unless current_user %> 
           <svg class="icon1" viewBox="0 0 35 35">
             <g>
               <rect width="13" height="13" rx="1" ry="1" x="1"  y="1"/>
@@ -49,6 +48,20 @@
       </li>
       
       <% if current_user %>
+
+      <li class="panel-option">
+        <!-- link needs to request a full url for rolling the panel -->
+        <%= link_to root_url, { class: "panel-option-link", id: "panel_link"} do %>
+          <svg class="icon1" viewBox="0 0 35 35">
+            <g>
+              <rect width="13" height="13" rx="1" ry="1" x="1"  y="1"/>
+              <rect width="13" height="13" rx="1" ry="1" x="20" y="1"/>
+              <rect width="13" height="13" rx="1" ry="1" x="1"  y="20" />
+              <rect width="13" height="13" rx="1" ry="1" x="20" y="20" />
+            </g>
+          </svg>
+        <% end %>
+      </li>
 
       <li class="panel-option">
         <%= link_to calendar_path, {class: 'panel-option-link'} do %>
